@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package calculator;
+
+option go_package="client_streaming_proto";
+
+
+
+message Request {
+    string num = 1;
+}
+
+message response {
+    string num = 1;
+}
+
+service CalculatorService {
+   rpc Average(stream Request) returns ( response) {}
+}

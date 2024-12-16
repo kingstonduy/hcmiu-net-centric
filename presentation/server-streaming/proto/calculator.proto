@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package calculator;
+
+option go_package="server_streaming_proto";
+
+message Request {
+    int32 num1 = 1;
+}
+
+message response {
+    int32 result = 1;
+}
+
+service CalculatorService {
+   rpc PrimeNumberDecomposition(Request) returns (stream response) {}
+}
